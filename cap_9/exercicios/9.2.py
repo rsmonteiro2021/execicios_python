@@ -19,24 +19,26 @@ while len(restaurantes) > 0:
     print('Escolha o restaurante na lista abaixo:')
     for restaurante in restaurantes:
         print(f'\t-{restaurante.title()}\n')
+        
     restaurant = input("Digite o nome do restaurante:\n")
+
     if restaurant == '':
         break
+
     elif restaurant not in restaurantes:
         print('O restaurante escolhido não encontra-se em nossa lista!')
         continue
+
     elif restaurant == 'massarela':
         restaurant = Restaurant(restaurant, 'italiana')
         restaurant.describe_restaurant()
         restaurantes.remove('massarela')
-      
-       
+             
     elif restaurant == 'xian':
         restaurant = Restaurant(restaurant, 'chinesa')
         restaurant.describe_restaurant()
         restaurantes.remove('xian')
   
-
     elif restaurant == 'chefranco':
         restaurant = Restaurant(restaurant, 'japonesa')
         restaurant.describe_restaurant()
