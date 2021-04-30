@@ -13,7 +13,8 @@ class Restaurant():
         """Inicializa os atributos name e cuisine."""
         self.name = name
         self.cuisine = cuisine
-
+        self.number_served = 0
+     
     def describe_restaurant(self):
         """Exibe a descrição do restaurante."""
         print("O restaurante " + self.name.title() + " é especialista na culinária " + self.cuisine.title() + ".")
@@ -21,15 +22,19 @@ class Restaurant():
     def open_restaurant(self):
         print(self.name.title() + " restaurant's encontra-se aberto!\n")
 
+    def set_number_served(self):
+        print("Estão sendo atendidos no momento " + str(self.number_served) + " clientes.")
+    
+    def increment_number(self, number):
+        self.number = number
+        print('No último dia de funcionamento foram atendidos ' + str(self.number) + ' clientes.')
+
 restaurant = Restaurant('Xian', 'Chinesa')
 restaurant.describe_restaurant()
 restaurant.open_restaurant()
+restaurant.number_served = 25
+restaurant.set_number_served()
+restaurant.increment_number(150)
 
-restaurant = Restaurant('O Braseiro', 'Brasileira')
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
-
-restaurant = Restaurant('Divina Gula', 'Mineira')
-restaurant.describe_restaurant()
 
 
