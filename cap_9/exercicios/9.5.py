@@ -46,16 +46,48 @@ class User():
     def reset_login_attempts(self, login):
         self.login_attempts = login
 
-usuario = User('Roberto', 'Monteiro', 1)
-print('Informações do Usuário:')
-usuario.describe_user()
-print('Menagem de boas vindas:')
-print(usuario.greet_user())
-usuario.increment_login_attempts(1)
-print('Informações do Usuário:')
-usuario.describe_user()
-usuario.increment_login_attempts(1)
-print('Informações do Usuário:')
-usuario.describe_user()
-usuario.reset_login_attempts(0)
-usuario.describe_user()
+first_name = input('Digite o primeiro nome do usuário:\n')
+last_name = input('Digite o último nome do usuário:\n')
+full_name = first_name.title() + ' ' + last_name.title()
+usuarios = ['Roberto Monteiro', 'kesia Oliveira']
+usuario = User(first_name, last_name, 1)
+if full_name in usuarios:
+    print('Informações do Usuário:')
+    usuario.describe_user()
+    print('Menagem de boas vindas:')
+    print(usuario.greet_user())
+    usuario.increment_login_attempts(1)
+else:
+    print('usuário não cadastrado! Você tem mais três tentativas!')
+    while usuario.login_attempts > 0 and usuario.login_attempts <= 3:
+        first_name = input('Digite o primeiro nome do usuário:\n')
+        last_name = input('Digite o último nome do usuário:\n')
+        full_name = first_name.title() + ' ' + last_name.title()
+        usuario = User(first_name, last_name, usuario.login_attempts)
+
+        if full_name in usuarios:
+            print('Informações do Usuário:')
+            usuario.describe_user()
+            print('Menagem de boas vindas:')
+            print(usuario.greet_user())
+            usuario.increment_login_attempts(1)
+            break
+        else:
+            if usuario.login_attempts == 1:
+                print('Informações do Usuário:')
+                usuario.describe_user()
+                print('Usuário não cadastrado!')
+                usuario.increment_login_attempts(1)
+                print('Você tem mais duas tentativas!')
+            elif usuario.login_attempts == 2:
+                print('Informações do Usuário:')
+                usuario.describe_user()
+                print('Usuário não cadastrado!')
+                usuario.increment_login_attempts(1)
+                print('ATENÇÃO: Você tem apenas mais uma tentativa!')
+            else:
+                print('Informações do Usuário:')
+                usuario.describe_user()
+                print('Usuário não cadastrado!')
+                usuario.reset_login_attempts(0)
+                print('Você excedeu o número de tentativas. Aguarde alguns instantes para tentar logar novamente!')
