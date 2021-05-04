@@ -24,10 +24,36 @@ class Car():
     
     def update_odometer(self, mileage):
         """Define o valor de leitura do hodômetro com valor especificado."""
-        self.odometer_reading = mileage
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
+class EletricCar(Car):
+    """Representa aspectos de um carro específicos de veículos elétricos."""
+    
+    def __init__(self, make, model, year):
+        """Inicializa os atributos da classe pai.
+        Em seguida, inicializa os atributos específicos de um carro elétrico."""
+        super().__init__(make, model, year)
+        self.battery_size = 70
+    
+    def describe_battery(self):
+        """Exibe uma frase que descreve a capacidade da bateria."""
+        print('This car has a ' + str(self.battery_size) + '-kwh battery.')
 
 my_new_car = Car('audi', 'a4', 2016)
 print(my_new_car.get_descriptive_name())
 
 my_new_car.update_odometer(23)
 my_new_car.read_odometer()
+
+my_new_car.increment_odometer(100)
+my_new_car.read_odometer()
+
+my_tesla = EletricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
