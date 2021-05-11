@@ -41,7 +41,17 @@ class Battery():
     
     def describe_battery(self):
         """Exibe uma frase que descreve a capacidade da bateria."""
-        print("This car has a " + str(self.battery_size) + " -kwh battery.")
+        print("\tThis car has a " + str(self.battery_size) + " -kwh battery.")
+    
+    def get_range(self):
+        """Exibe uma frase sobre a distância queo carro é capaz de percorrer com essa bateria."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+
+        message = 'This car can go approximately ' + str(range) + ' miles on a full charge.'
+        print('\t' + message)
 
 class EletricCar(Car):
     """Representa aspectos de um carro específicos de veículos elétricos."""
@@ -108,5 +118,5 @@ my_new_car.read_odometer()
 my_tesla = EletricCar("tesla", "model's", 2022)
 my_tesla.describe_details()
 my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
 print('\t' + my_tesla.get_descriptive_name())
-
