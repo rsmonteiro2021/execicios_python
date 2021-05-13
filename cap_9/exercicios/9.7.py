@@ -1,4 +1,14 @@
 """
+    Admin: Um administrador é um tipo especial de usuário. Escreva uma classe chamada
+    Admin que herde da classe User escrita no Exercício 9.3 (página 226), ou no Exercício
+    9.5 [página 232]. Adicione um atributo privileges que armazene uma lista de strings como
+    'can add post', 'can delete post', 'can ban user', e assim por diante. Escreva um método
+    chamado show_privileges() que liste o conjunto de privilégios de um administrador. Crie
+    uma instância de Admin e chame seu método.
+"""
+# Relembrando o exercício 9.5
+
+"""
     Tentativas de Login: Acrescente um atibuto chamado login_attempts à sua classe User
     do Exercício 9.3 (página 226). Escreva um método chamado increment_login_attempts()
     que incremente o valor de login_attempts em 1. Escreva outro método chamado
@@ -9,16 +19,6 @@
     Exiba o valor de login_attempts para garantir que ele foi incrementado de forma apropriada
     e, em seguida, chame reset_login_attempts(). Exiba login_attempts novamente para garantir
     que seu valor foi reiniciado com O.
-"""
-# Relembrando o exercício 9.3
-
-"""
-    Usuários: Crie uma classe chamada User. Crie dois atributos de nomes first_name e last_name e,
-    então, crie vários outros atributos normalmente armazenados em um perfil de usuário. Escreva
-    um método de nome describe_user() que apresente um resumo das informações do usuário. Escreva
-    Escreva outro método chamado greet_user() que mostre uma saudação personalizada ao usuário.
-    Crie várias instâncias que representem diferentes usuários e chame os dois métodos para cada
-    usuário.
 """
 
 class User():
