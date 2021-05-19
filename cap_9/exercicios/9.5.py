@@ -48,7 +48,7 @@ class User():
 
 first_name = input('Digite o primeiro nome do usuário:\n')
 last_name = input('Digite o último nome do usuário:\n')
-full_name = first_name + " " + last_name
+full_name = first_name.title() + " " + last_name.title()
 usuarios = ['Roberto Monteiro', 'Kesia Jacquline']
 usuario = User(first_name, last_name, 1)
 if full_name in usuarios:
@@ -62,7 +62,7 @@ else:
     while usuario.login_attempts > 0 and usuario.login_attempts <= 3:
         first_name = input('Digite o primeiro nome do usuário:\n')
         last_name = input('Digite o último nome do usuário:\n')
-        full_name = first_name + " " + last_name
+        full_name = first_name.title() + " " + last_name.title()
         usuario = User(first_name, last_name, usuario.login_attempts)
         if usuario.login_attempts > 0 and usuario.login_attempts < 3:
             if full_name in usuarios:
@@ -90,4 +90,4 @@ else:
                 usuario.describe_user()
                 print(full_name + ' não está cadastrado.')
                 usuario.reset_login_attempts(0)
-                print('Você deve esperar alguns minutos para tentar logar novamente!')
+                print('\t- Você Excedeu o número de tentativas de login.\n\t- Espere alguns minutos para tentar logar novamente!')
