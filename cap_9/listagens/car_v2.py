@@ -44,7 +44,7 @@ class Battery():
         print("\tThis car has a " + str(self.battery_size) + " -kwh battery.")
     
     def get_range(self):
-        """Exibe uma frase sobre a distância queo carro é capaz de percorrer com essa bateria."""
+        """Exibe uma frase sobre a distância que o carro é capaz de percorrer com essa bateria."""
         if self.battery_size == 70:
             range = 240
         elif self.battery_size == 85:
