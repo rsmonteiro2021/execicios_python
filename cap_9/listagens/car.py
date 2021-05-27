@@ -20,7 +20,7 @@ class Car():
     
     def read_odometer(self):
         """Exibe uma frase que mostra a milhagem do carro """
-        print("This car has " + str(self.odometer_reading) + " miles on it.")
+        print("\tThis car has " + str(self.odometer_reading) + " miles on it.")
     
     def update_odometer(self, mileage):
         """Define o valor de leitura do hodômetro com valor especificado."""
@@ -41,7 +41,7 @@ class Battery():
     
     def describe_battery(self):
         """Exibe uma frase que descreve a capacidade da bateria."""
-        print("This car has a " + str(self.battery_size) + " -kwh battery.")
+        print("\tThis car has a " + str(self.battery_size) + " -kwh battery.")
 
 class EletricCar(Car):
     """Representa aspectos de um carro específicos de veículos elétricos."""
@@ -106,9 +106,10 @@ my_new_car.read_odometer()
 
 my_new_car.increment_odometer(100)
 my_new_car.read_odometer()
-"""
+
 my_tesla = EletricCar("tesla", "model's", 2022)
 my_tesla.describe_details()
 my_tesla.battery.describe_battery()
 print('\t' + my_tesla.get_descriptive_name())
+"""
 
