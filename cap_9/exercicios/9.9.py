@@ -47,20 +47,21 @@ class Battery():
 
     def describe_battery(self):
         """Retorna uma mensagem com a capacidade da bateria."""
-        message = 'This car has a ' + str(self.battery_size) + ' kwh battery.'
-        return message
-
+        print('\tThis car has a ' + str(self.battery_size) + ' kwh battery.')
+      
     def get_range(self):
         """Exibe uma frase acerca da distância que o carro é capaz de percorrer com essa bateria."""
         if self.battery_size == 70:
             range = 240
         elif self.battery_size == 85:
             range = 270
-        print = 'This car has a ' + str(self.battery_size) + ' kwh battery.'
+        message = 'This car can go approximately ' + str(range) + ' miles on a full charge.'
+        print('\t' + message)
 
     def upgrade_battery(self, battery_size = 85):
         """Exibe a capacidade da bateria."""
         self.battery_size = battery_size
+        return self.battery_size
 
 class EletricCar(Car):
     """Tetantiva simples de modelar um veículo elétrico."""
@@ -75,7 +76,8 @@ class EletricCar(Car):
     
     def describe_battery(self):
         """Exibe uma frase que descreve a capacidade da bateria."""
-        print("This car has a " + str(self.battery_size) + " -kwh battery.")
+        battery = "This car has a " + str(self.battery_size) + " -kwh battery."
+        return battery
 
     def describe_details(self):
         """Retorna detalhes do carro elétrico."""
@@ -131,8 +133,8 @@ my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
 print('\t' + my_tesla.get_descriptive_name())
 my_tesla.battery.upgrade_battery()
+my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
-print('\t' + my_tesla.get_descriptive_name())
 
 
 
