@@ -1,6 +1,6 @@
 """
-    Vamos escrever uma nova classe que represente um carro. Nossa classe armazenará informações
-    sobre o tipo de carro com que estamos trabalhando e terá um método que sintetiza essa informação.
+    Vamos escrever um conjunto de classes usado para representar carros à gasolina e 
+    elétricos.
 """
 
 class Car():
@@ -42,6 +42,17 @@ class Battery():
     def describe_battery(self):
         """Exibe uma frase que descreve a capacidade da bateria."""
         print("\tThis car has a " + str(self.battery_size) + " -kwh battery.")
+    
+    def get_range(self):
+        """Exibe uma frase sobre a distância que o carro pode percorrer com essa bateria."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+        
+        message = 'This car can go approximetely ' + str(range)
+        message += 'miles on a full charge.'
+        print('\t' + message)
 
 class EletricCar(Car):
     """Representa aspectos de um carro específicos de veículos elétricos."""
@@ -95,21 +106,3 @@ class EletricCar(Car):
                     break
             else:
                 print('Não estamos personalizando o carro elétrico no momento!')
-
-"""my_new_car = Car('audi', 'a4', 2016)
-print(my_new_car.get_descriptive_name())
-my_new_car.odometer_reading = 23 # uma forma de alterar o valor de um atributo diretamente
-my_new_car.read_odometer()
-
-my_new_car.update_odometer(23)
-my_new_car.read_odometer()
-
-my_new_car.increment_odometer(100)
-my_new_car.read_odometer()
-
-my_tesla = EletricCar("tesla", "model's", 2022)
-my_tesla.describe_details()
-my_tesla.battery.describe_battery()
-print('\t' + my_tesla.get_descriptive_name())
-"""
-
