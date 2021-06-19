@@ -6,13 +6,11 @@
     vez percorrendo o objeto arqivo com um laço e outra armazenando as linhas em uma lista e
     então trabalhando com ela fora do bloco with.
 """
-    
-filename = 'learning_python.txt'
-    
-x = 0
-with open(filename) as file_object:
-    contents = file_object.readlines()
-    print(contents)
-while x > 0 and x < 4:
-    print(contents)
-    x += 1
+x = 1
+while x < 4:
+    print(f'{x} veze(s):\n')
+    filename = 'learning_python.txt'
+    with open(filename) as file_object:
+        contents = file_object.readlines()
+        print(contents)
+        x += 1
