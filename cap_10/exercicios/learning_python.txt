@@ -1,0 +1,13 @@
+Capitulo 10 do Livro Curso Intensivo de Python
+
+Em Python podemos criar variaveis numericas, de texto ou boleanas;
+Em Python entendemos que eh possivel armazenar informacoes em um arquivo de texto (*.txt)
+e, em seguida chamarmos em um arquivo python *.py.
+Tambem eh possivel utilizar esses dados para uma serie de resultados, como por exemplo:
+- exibir o numero pi com uma determinada quantidade de dígitos significativos, pedir a python
+que verifique se a sua data de nascimento encontra-se no numero exibido.
+
+Este e um arquivo utilizado como exercicio em python 3.
+
+Roberto Monteiro
+
