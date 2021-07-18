@@ -2,7 +2,7 @@ def count_words(filename):
     """Conta o número aproximado de palavras em um arquivo."""
     
     try:
-        with open(filename) as f_obj:
+        with open(filename, encoding='utf-8') as f_obj:
             contents = f_obj.read()
     except FileNameFoundError:
         msg = "Sorry, the file " + filename + " does not exist."
