@@ -17,7 +17,7 @@ while prestacoes > limite:
     
     alterar = input('Para alterar o número de parcelas digite P, para alterar o valor do financiamento digite V:\n')
     
-    if alterar == 'v' or alterar == 'V':
+    if alterar.upper() == 'v' or alterar == 'V':
         valor = float(input('Digite o valor do financiamento:\n'))
     elif alterar == 'p' or alterar == 'P':
         parcelas = int(input('Digite o número de parcelas:\n'))
